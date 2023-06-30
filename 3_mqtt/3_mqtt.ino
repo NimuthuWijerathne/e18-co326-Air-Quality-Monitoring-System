@@ -2,6 +2,8 @@
 #include <PubSubClient.h>
 #include <DHT.h>  // Including library for dht
 #include "MQ135.h"
+#include <Arduino.h>
+
 
 //PINS
 #define DHTPIN D7          
@@ -10,7 +12,8 @@
 
 //define sensors
 DHT dht(DHTPIN, DHT11);
-MQ135 gasSensor = MQ135(A0);     
+MQ135 gasSensor = MQ135(A0); 
+   
 
 // variables
 const char *ssid = "vivo"; // Enter your WiFi name
@@ -29,6 +32,7 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 
 void setup() {
+ #define GLED D1 //Define green LED pin
  // Set software serial baud to 115200;
  Serial.begin(115200);
  delay(10);
@@ -121,12 +125,26 @@ void mq135(){
   Serial.println();
 
   client.publish(topic_airquality,payloada);
+//  return payloada;
 
 }
+
+//void greenled(char payloada){
+//
+//  int recommendedAmount = 20000;
+//
+//  if(payloada>recommendedAmount){
+//    digitalWrite(GLED, LOW); // Turn the LED on (Note that LOW is the voltage level)
+//    delay(1000); // Wait for a second
+//  }
+//   
+//}
+
 
 void loop() {
  client.loop();
  dht11();
  mq135();
  delay(1000);  // Delay for one second before taking the next reading
+// greenled(payloada);
 }
