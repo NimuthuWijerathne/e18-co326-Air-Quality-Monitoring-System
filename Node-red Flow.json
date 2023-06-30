@@ -1,0 +1,644 @@
+[
+    {
+        "id": "70dce75348766b6c",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ac9b25cc9572fe4c",
+        "type": "mqtt in",
+        "z": "70dce75348766b6c",
+        "name": "",
+        "topic": "UoP/CO/326/E18/19/MQ135/AirQuality",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "0547165f1d1dffe5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 120,
+        "wires": [
+            [
+                "9fe2bf17c4f06964",
+                "a65f02eb41df181f",
+                "7f7176dea55cebbd"
+            ]
+        ]
+    },
+    {
+        "id": "9fe2bf17c4f06964",
+        "type": "ui_gauge",
+        "z": "70dce75348766b6c",
+        "name": "",
+        "group": "068e6c94c6047778",
+        "order": 1,
+        "width": "6",
+        "height": "6",
+        "gtype": "gage",
+        "title": "CO2 Concentration",
+        "label": "PPM",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100000",
+        "colors": [
+            "#08f70c",
+            "#d6e600",
+            "#f70808"
+        ],
+        "seg1": "25000",
+        "seg2": "60000",
+        "diff": false,
+        "className": "",
+        "x": 790,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "82f2750adb76585c",
+        "type": "ui_chart",
+        "z": "70dce75348766b6c",
+        "name": "",
+        "group": "d0ef4d610222addc",
+        "order": 4,
+        "width": "6",
+        "height": "5",
+        "label": "Temperature (°C)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 710,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d258b678e9f60fdd",
+        "type": "mqtt in",
+        "z": "70dce75348766b6c",
+        "name": "",
+        "topic": "UoP/CO/326/E18/19/DHT11/temperature",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "0547165f1d1dffe5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 340,
+        "y": 220,
+        "wires": [
+            [
+                "82f2750adb76585c",
+                "518ba8188e01eb06"
+            ]
+        ]
+    },
+    {
+        "id": "370c8324b2d171d2",
+        "type": "mqtt in",
+        "z": "70dce75348766b6c",
+        "name": "",
+        "topic": "UoP/CO/326/E18/19/DHT11/humidity",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "0547165f1d1dffe5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 320,
+        "wires": [
+            [
+                "da790d6401273a86",
+                "d73f04f264d72818"
+            ]
+        ]
+    },
+    {
+        "id": "da790d6401273a86",
+        "type": "ui_chart",
+        "z": "70dce75348766b6c",
+        "name": "",
+        "group": "af3b0fbf9de37bdb",
+        "order": 4,
+        "width": "6",
+        "height": "5",
+        "label": "Humidity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 680,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4c2629f7fd45effe",
+        "type": "mqtt out",
+        "z": "70dce75348766b6c",
+        "name": "",
+        "topic": "UoP/CO/326/E18/19/Buzzer",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0547165f1d1dffe5",
+        "x": 920,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "2989a386d3f97a6e",
+        "type": "ui_button",
+        "z": "70dce75348766b6c",
+        "name": "",
+        "group": "068e6c94c6047778",
+        "order": 0,
+        "width": "6",
+        "height": "1",
+        "passthru": false,
+        "label": "Activate Buzzer",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "buzzeron",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 260,
+        "y": 600,
+        "wires": [
+            [
+                "4c2629f7fd45effe"
+            ]
+        ]
+    },
+    {
+        "id": "19f9b8b6a0831b70",
+        "type": "change",
+        "z": "70dce75348766b6c",
+        "name": "Green",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1070,
+        "y": 40,
+        "wires": [
+            [
+                "9cad899f833b69fc"
+            ]
+        ]
+    },
+    {
+        "id": "b2a92f59926ebed1",
+        "type": "change",
+        "z": "70dce75348766b6c",
+        "name": "Yellow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1070,
+        "y": 120,
+        "wires": [
+            [
+                "9cad899f833b69fc"
+            ]
+        ]
+    },
+    {
+        "id": "2635993f32536426",
+        "type": "change",
+        "z": "70dce75348766b6c",
+        "name": "Red",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "3",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1070,
+        "y": 200,
+        "wires": [
+            [
+                "9cad899f833b69fc"
+            ]
+        ]
+    },
+    {
+        "id": "518ba8188e01eb06",
+        "type": "ui_gauge",
+        "z": "70dce75348766b6c",
+        "name": "",
+        "group": "d0ef4d610222addc",
+        "order": 3,
+        "width": "6",
+        "height": "6",
+        "gtype": "gage",
+        "title": "Temperature (Celsius)",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#09a2c8",
+            "#08fd24",
+            "#ca3838"
+        ],
+        "seg1": "22",
+        "seg2": "36",
+        "diff": false,
+        "className": "",
+        "x": 740,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "d73f04f264d72818",
+        "type": "ui_gauge",
+        "z": "70dce75348766b6c",
+        "name": "",
+        "group": "af3b0fbf9de37bdb",
+        "order": 1,
+        "width": "6",
+        "height": "6",
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 680,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "9cad899f833b69fc",
+        "type": "mqtt out",
+        "z": "70dce75348766b6c",
+        "name": "",
+        "topic": "UoP/CO/326/E18/19/LED",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0547165f1d1dffe5",
+        "x": 1390,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "a65f02eb41df181f",
+        "type": "ui_chart",
+        "z": "70dce75348766b6c",
+        "name": "",
+        "group": "068e6c94c6047778",
+        "order": 2,
+        "width": "6",
+        "height": "5",
+        "label": "Air Quality (PPM)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 510,
+        "y": 20,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6f005f0e5590d116",
+        "type": "change",
+        "z": "70dce75348766b6c",
+        "name": "Buzzer",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "buzzeron",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 280,
+        "wires": [
+            [
+                "881fdeadcac7b679"
+            ]
+        ]
+    },
+    {
+        "id": "881fdeadcac7b679",
+        "type": "mqtt out",
+        "z": "70dce75348766b6c",
+        "name": "",
+        "topic": "UoP/CO/326/E18/19/Buzzer",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0547165f1d1dffe5",
+        "x": 1400,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "5ade16b21eb4d269",
+        "type": "mqtt in",
+        "z": "70dce75348766b6c",
+        "name": "",
+        "topic": "UoP/CO/326/E18/19/DHT11/temperatureF",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "0547165f1d1dffe5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 340,
+        "y": 440,
+        "wires": [
+            [
+                "46aedf448833c6d2"
+            ]
+        ]
+    },
+    {
+        "id": "46aedf448833c6d2",
+        "type": "ui_gauge",
+        "z": "70dce75348766b6c",
+        "name": "",
+        "group": "d0ef4d610222addc",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature (Farenheit)",
+        "label": "°F",
+        "format": "{{value}}",
+        "min": "32",
+        "max": "122",
+        "colors": [
+            "#09a2c8",
+            "#08fd24",
+            "#ca3838"
+        ],
+        "seg1": "71.6",
+        "seg2": "96.8",
+        "diff": false,
+        "className": "",
+        "x": 730,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "7f7176dea55cebbd",
+        "type": "switch",
+        "z": "70dce75348766b6c",
+        "name": "Air Quality Switch",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "25000",
+                "vt": "str"
+            },
+            {
+                "t": "btwn",
+                "v": "30000",
+                "vt": "num",
+                "v2": "60000",
+                "v2t": "num"
+            },
+            {
+                "t": "gte",
+                "v": "60000",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 830,
+        "y": 100,
+        "wires": [
+            [
+                "19f9b8b6a0831b70"
+            ],
+            [
+                "b2a92f59926ebed1"
+            ],
+            [
+                "2635993f32536426",
+                "6f005f0e5590d116"
+            ]
+        ]
+    },
+    {
+        "id": "0547165f1d1dffe5",
+        "type": "mqtt-broker",
+        "name": "TestMQTT",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "100",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "068e6c94c6047778",
+        "type": "ui_group",
+        "name": "Air Quality",
+        "tab": "21babe0d99ca56dc",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d0ef4d610222addc",
+        "type": "ui_group",
+        "name": "Temperature",
+        "tab": "21babe0d99ca56dc",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "af3b0fbf9de37bdb",
+        "type": "ui_group",
+        "name": "Humidity",
+        "tab": "21babe0d99ca56dc",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "21babe0d99ca56dc",
+        "type": "ui_tab",
+        "name": "Air Quality Dashboard",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
