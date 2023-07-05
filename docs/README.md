@@ -2,14 +2,13 @@
 layout: home
 permalink: index.html
 
-# Please update this with your repository name and title
-repository-name: eYY-XXX-project-template
+repository-name: e18-co326-Air-Quality-Monitoring-System
 title:
 ---
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
-# Project Title
+# AIR QUALITY MONITORING SYSTEM
 
 ---
 
@@ -20,9 +19,9 @@ This is a sample image, to show how to add images to your page. To learn more op
  -->
 
 ## Team
--  eNumber, Name, [email](mailto:name@email.com)
--  eNumber, Name, [email](mailto:name@email.com)
--  eNumber, Name, [email](mailto:name@email.com)
+-  e18242, Nimnadi J.A.S, [email](mailto:e18242@eng.pdn.ac.lk)
+-  e18368, Uduwanage H.U., [email](mailto:e18368@eng.pdn.ac.lk)
+-  e18398, Wijerathne R.M.N.S., [email](mailto:e18398@eng.pdn.ac.lk)
 
 ## Table of Contents
 1. [Introduction](#introduction)
